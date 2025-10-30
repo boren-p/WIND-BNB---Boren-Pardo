@@ -3,12 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./src/styles/output.css">
+    <link rel="stylesheet" href="./output.css">
     <script src="./src/scripts/main.js" defer type="module"></script>
-    <title>PF Windbnd Vanilla - Boren Pardo</title>
+    <title>Windbnd Vanilla - Boren Pardo</title>
 </head>
-<body>
-    <h1 class="bg-slate-800 text-white text-2xl">Hola mundo!</h1>
-    
+<body class="flex h-screen justify-center items-start">
+    <div class="flex flex-col h-full w-[500px] lg:w-[900px]">
+        
+        <header class="flex flex-col items-center justify-between w-full h-50 bg-white px-10 py-5 lg:flex-row lg:px-0">
+            <div class="flex items-baseline h-[50%] w-full lg:w-[70%]"><img src="./src/images/icons/logo-f7862584.svg" alt="logo Wind-BNB" class="h-7 w-30"></div>
+            <div class="flex bg-white border-2 border-gray-100 w-[410px] h-20 rounded-3xl drop-shadow-2xl">
+                <div class="flex items-center justify-center h-full w-[45%] border-r border-gray-200 text-gray-300 rounded-l-3xl"> Add location</div>
+                <div class="flex items-center justify-center h-full w-[35%] border-r border-gray-200 text-gray-300">Add guests</div>
+                <div class="flex items-center justify-center h-full w-[20%] rounded-r-3xl">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-5 stroke-[#eb5757]">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
+                    </svg>
+                </div>
+            </div>
+        </header>
+
+        <div class="flex bg-white justify-between items-center py-10">
+            <h1 class="font-extrabold text-4xl">Stays in Finland</h1>
+            <h2 class="font-bold">12+ stays</h2>
+        </div>
+
+        <div class="grid grid-cols-1 gap-5 h-full w-full lg:grid-cols-2">
+            <div class="flex bg-amber-500 w-full h-90"></div>
+            <div class="flex bg-amber-500 w-full h-90"></div>
+            <div class="flex bg-amber-500 w-full h-90"></div>
+            <div class="flex bg-amber-500 w-full h-90"></div>
+            <div class="flex bg-amber-500 w-full h-90"></div>
+            <div class="flex bg-amber-500 w-full h-90"></div>
+            <div class="flex bg-amber-500 w-full h-90"></div>
+            <div class="flex bg-amber-500 w-full h-90"></div>
+            <div class="flex bg-amber-500 w-full h-90"></div>
+        </div>
+    </div>
 </body>
 </html>
