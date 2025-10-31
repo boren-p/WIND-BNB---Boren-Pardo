@@ -7,14 +7,14 @@
     <script src="./src/scripts/main.js" defer type="module"></script>
     <title>Windbnd Vanilla - Boren Pardo</title>
 </head>
-<body class="flex h-screen justify-center items-start">
-    <div class="flex flex-col h-full w-[450px] md:w-[900px] lg:w-[1200px]">
-        
+<body class="flex h-screen justify-center items-center mx-10">
+    <div class="flex flex-col h-full w-[450px] md:w-[900px] lg:w-[1400px]">
+    <!--BUSQUEDA-->
         <header class="flex flex-col items-center justify-between w-full h-50 bg-white px-10 py-5 md:flex-row md:px-0">
-            <div class="flex items-baseline h-[50%] w-full md:w-[70%]"><img src="./src/images/icons/logo-f7862584.svg" alt="logo Wind-BNB" class="h-7 w-30"></div>
-            <div class="flex bg-white border-2 border-gray-100 w-[410px] h-20 rounded-3xl drop-shadow-2xl">
-                <div class="flex items-center justify-center h-full w-[45%] border-r border-gray-200 text-gray-300 rounded-l-3xl"> Add location</div>
-                <div class="flex items-center justify-center h-full w-[35%] border-r border-gray-200 text-gray-300">Add guests</div>
+            <div id="reload" class="flex items-baseline h-[50%] w-full md:w-[70%]"><img src="./src/images/icons/logo-f7862584.svg" alt="logo Wind-BNB" class="h-7 w-30"></div>
+            <div id="searcher" class="flex bg-white border-2 border-gray-100 w-[410px] h-20 rounded-3xl shadow-md cursor-pointer">
+                <div id="location" class="flex items-center justify-center h-full w-[45%] border-r border-gray-200 text-gray-300 rounded-l-3xl"> Add location</div>
+                <div id="guests" class="flex items-center justify-center h-full w-[35%] border-r border-gray-200 text-gray-300">Add guests</div>
                 <div class="flex items-center justify-center h-full w-[20%] rounded-r-3xl">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-5 stroke-[#eb5757]">
                         <path stroke-linecap="round" stroke-linejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
@@ -23,18 +23,30 @@
             </div>
         </header>
 
+    <!--TEXTOS-->
         <div class="flex bg-white justify-between items-center py-10">
             <h1 class="font-extrabold text-4xl">Stays in Finland</h1>
-            <h2 class="font-bold">12+ stays</h2>
+            <h2 id="numberCards" class="font-bold">12+ stays</h2>
         </div>
 
+    <!--CONTENIDO DE CARDS-->
+        <div>
+            <div id="notFound" class="hidden flex flex-col w-full h-150 items-center justify-center">
+                <img src="./src/images/icons/NOT FOUND 2.png" alt="Not Found">
+                <h1 class="font-extrabold text-4xl">Not found</h1>
+            </div>
+        </div>
         <div id="maya" class="grid grid-cols-1 gap-5 h-full w-full md:grid-cols-2 lg:grid-cols-3">
-            <div id="crd" class="flex flex-col justify-between w-full h-90 gap-2">
+        <!--CARD DE PRUEBA, PARA PROBAR NUEVOS CAMBIOS Y CORRECIONES-->
+            <div id="crd" class="hidden flex-col justify-between w-full h-90 gap-2 p-1 rounded-[28px] hover:border-gray-300 hover:border-2">
                 <div class="bg-[url(./src/images/disign/download.jpg)] bg-no-repeat bg-cover w-full h-[80%] rounded-3xl"></div>
                 <div class="flex flex-col justify-between w-full h-[17%] px-4 pb-2">
                     <div class="flex w-full justify-between">
-                        <h3>Entire apartment . 2 beds</h3>
-                        <div class="flex items-center justify-between w-11">
+                        <div class="flex items-center gap-2">
+                        <div id="sh" class="hidden items-center justify-center w-27 h-6 border border-gray-700 rounded-2xl p-1 font-bold">SUPERHOST</div>
+                        <h3>Entire apartment <h1>. 2 beds </h1></h3>
+                        </div>
+                        <div class="flex items-center justify-between w-10">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-4 fill-[#eb5757]">
                                 <path fill-rule="evenodd" d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.006 5.404.434c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.434 2.082-5.005Z" clip-rule="evenodd" />
                             </svg>
@@ -44,127 +56,78 @@
                     <h2 class="font-bold">Stylist apartment in center of the city</h2>
                 </div>
             </div>
-            <div id="crd" class="flex flex-col justify-between w-full h-90 gap-2">
-                <div class="bg-[url(./src/images/disign/download.jpg)] bg-no-repeat bg-cover w-full h-[80%] rounded-3xl"></div>
-                <div class="flex flex-col justify-between w-full h-[17%] px-4 pb-2">
-                    <div class="flex w-full justify-between">
-                        <h3>Entire apartment . 2 beds</h3>
-                        <div class="flex items-center justify-between w-11">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-4 fill-[#eb5757]">
-                                <path fill-rule="evenodd" d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.006 5.404.434c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.434 2.082-5.005Z" clip-rule="evenodd" />
+
+        </div>
+
+    <!--MODAL-->
+        <div id="filterModal" class="hidden h-screen">
+        <!--FONDO OSCURECIDO-->
+            <div class="fixed w-full h-full bg-neutral-600 backdrop-blur-sm opacity-50 top-0 left-0 "></div>
+        <!--CUERPO DE MODAL-->
+            <div class="fixed flex flex-col items-center justify-center w-full h-[80%] top-0 left-0 bg-white p-5 md:h-[55%]">
+                <div class="flex flex-col items-center justify-center h-full w-full gap-7">
+                <div class="flex w-full items-baseline justify-between">
+                    <h3 id="reset" class="cursor-pointer font-bold text-[14px] text-gray-500">Edit your search</h3>
+                    <h1 id="closeModal" class="font-bold text-2xl cursor-pointer">X</h1>
+                </div>
+            <!--INPUTS-->
+                <div class="flex flex-col w-full h-40 rounded-2xl shadow-md border-2 border-gray-100 md:w-[90%] md:h-20 md:flex-row">
+                    <div id="location" tabindex="0" class="flex relative flex-col justify-center h-20 w-full rounded-t-2xl border-b-2 border-gray-100 py-2 px-5 md:w-[33%] md:border-b-0 md:rounded-b-2xl md:focus:border-2 md:border-black">
+                        <label for="Location" class="font-bold text-[14px] text-gray-500">LOCATION</label>
+                        <input id="locationIn" type="text" placeholder="Add location" class="text-[20px] appearance-none outline-none border-none bg-transparent">
+                        <div id="locationOptions" class="hidden absolute top-full left-0 w-full rounded-b-2xl md:rounded-t-2xl bg-white overflow-hidden shadow-2xl">
+                            <div class="w-full h-10 text-center bg-white">${element.city}</div>  
+                        </div> 
+                    </div>
+                    <div id="guests" tabindex="0" class="flex flex-col justify-center h-20 w-full rounded-b-2xl py-2 px-5 md:w-[33%] md:rounded-t-2xl md:focus:border-2">
+                        <label for="Guests" class="font-bold text-[14px] text-gray-500">GUESTS</label>
+                        <input id="guestsIn" type="number" placeholder="Add guests number" class="text-[20px] appearance-none outline-none border-none bg-transparent">
+                    </div>
+                    <div class="hidden md:flex w-[33%] h-full items-center justify-center">
+                        <div id="searchFilters" class="flex items-center justify-center gap-3 h-15 w-40 text-white bg-[#eb5757] rounded-2xl cursor-pointer">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-5 stroke-white">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
                             </svg>
-                            <h3>4.4</h3>
+                            search
                         </div>
                     </div>
-                    <h2 class="font-bold">Stylist apartment in center of the city</h2>
                 </div>
-            </div>
-            <div id="crd" class="flex flex-col justify-between w-full h-90 gap-2">
-                <div class="bg-[url(./src/images/disign/download.jpg)] bg-no-repeat bg-cover w-full h-[80%] rounded-3xl"></div>
-                <div class="flex flex-col justify-between w-full h-[17%] px-4 pb-2">
-                    <div class="flex w-full justify-between">
-                        <h3>Entire apartment . 2 beds</h3>
-                        <div class="flex items-center justify-between w-11">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-4 fill-[#eb5757]">
-                                <path fill-rule="evenodd" d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.006 5.404.434c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.434 2.082-5.005Z" clip-rule="evenodd" />
-                            </svg>
-                            <h3>4.4</h3>
-                        </div>
+            <!--CONTROLES DE HUESPEDES-->
+                <div class="flex w-full h-full md:w-[25%] md:w-min-[292px]">
+                <div class="flex flex-col w-[50%] gap-10 ">
+                    <div  class="flex flex-col gap-2">
+                        <h3 class="font-semibold">Adults</h3>
+                        <p class="text-gray-400 text-sm">Ages 13 or above</p>
+                            <div class="flex items-center gap-10">
+                                <button id="restAdult" class="w-8 h-8 border rounded cursor-pointer hover:bg-[#e77171] hover:text-white">-</button>
+                                <span id="adultsNumber" class="font-bold text-lg">0</span>
+                                <button id="addAdult" class="w-8 h-8 border rounded cursor-pointer hover:bg-[#e77171] hover:text-white">+</button>
+                            </div>
                     </div>
-                    <h2 class="font-bold">Stylist apartment in center of the city</h2>
-                </div>
-            </div>
-            <div id="crd" class="flex flex-col justify-between w-full h-90 gap-2">
-                <div class="bg-[url(./src/images/disign/download.jpg)] bg-no-repeat bg-cover w-full h-[80%] rounded-3xl"></div>
-                <div class="flex flex-col justify-between w-full h-[17%] px-4 pb-2">
-                    <div class="flex w-full justify-between">
-                        <h3>Entire apartment . 2 beds</h3>
-                        <div class="flex items-center justify-between w-11">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-4 fill-[#eb5757]">
-                                <path fill-rule="evenodd" d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.006 5.404.434c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.434 2.082-5.005Z" clip-rule="evenodd" />
-                            </svg>
-                            <h3>4.4</h3>
-                        </div>
+                    <div id="childCont" class="flex flex-col gap-2">
+                        <h3 class="font-semibold">Children</h3>
+                        <p class="text-gray-400 text-sm">Ages 13 or above</p>
+                            <div class="flex items-center gap-10">
+                                <button id="restChild" class="w-8 h-8 border rounded cursor-pointer hover:bg-[#e77171] hover:text-white">-</button>
+                                <span id="childrenNumber" class="font-bold text-lg">0</span>
+                                <button id="addChild" class="w-8 h-8 border rounded cursor-pointer hover:bg-[#e77171] hover:text-white">+</button>
+                            </div>
                     </div>
-                    <h2 class="font-bold">Stylist apartment in center of the city</h2>
                 </div>
-            </div>
-            <div id="crd" class="flex flex-col justify-between w-full h-90 gap-2">
-                <div class="bg-[url(./src/images/disign/download.jpg)] bg-no-repeat bg-cover w-full h-[80%] rounded-3xl"></div>
-                <div class="flex flex-col justify-between w-full h-[17%] px-4 pb-2">
-                    <div class="flex w-full justify-between">
-                        <h3>Entire apartment . 2 beds</h3>
-                        <div class="flex items-center justify-between w-11">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-4 fill-[#eb5757]">
-                                <path fill-rule="evenodd" d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.006 5.404.434c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.434 2.082-5.005Z" clip-rule="evenodd" />
-                            </svg>
-                            <h3>4.4</h3>
-                        </div>
-                    </div>
-                    <h2 class="font-bold">Stylist apartment in center of the city</h2>
+                <div class="w-[50%] h-full"></div>
                 </div>
-            </div>
-            <div id="crd" class="flex flex-col justify-between w-full h-90 gap-2">
-                <div class="bg-[url(./src/images/disign/download.jpg)] bg-no-repeat bg-cover w-full h-[80%] rounded-3xl"></div>
-                <div class="flex flex-col justify-between w-full h-[17%] px-4 pb-2">
-                    <div class="flex w-full justify-between">
-                        <h3>Entire apartment . 2 beds</h3>
-                        <div class="flex items-center justify-between w-11">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-4 fill-[#eb5757]">
-                                <path fill-rule="evenodd" d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.006 5.404.434c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.434 2.082-5.005Z" clip-rule="evenodd" />
-                            </svg>
-                            <h3>4.4</h3>
-                        </div>
-                    </div>
-                    <h2 class="font-bold">Stylist apartment in center of the city</h2>
                 </div>
-            </div>
-            <div id="crd" class="flex flex-col justify-between w-full h-90 gap-2">
-                <div class="bg-[url(./src/images/disign/download.jpg)] bg-no-repeat bg-cover w-full h-[80%] rounded-3xl"></div>
-                <div class="flex flex-col justify-between w-full h-[17%] px-4 pb-2">
-                    <div class="flex w-full justify-between">
-                        <h3>Entire apartment . 2 beds</h3>
-                        <div class="flex items-center justify-between w-11">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-4 fill-[#eb5757]">
-                                <path fill-rule="evenodd" d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.006 5.404.434c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.434 2.082-5.005Z" clip-rule="evenodd" />
-                            </svg>
-                            <h3>4.4</h3>
-                        </div>
-                    </div>
-                    <h2 class="font-bold">Stylist apartment in center of the city</h2>
+                <div id="searchFilters" class="flex md:hidden items-center justify-center gap-3 h-15 w-40 text-white bg-[#eb5757] rounded-2xl cursor-pointer">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-5 stroke-white">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
+                    </svg>
+                    search
                 </div>
-            </div>
-            <div id="crd" class="flex flex-col justify-between w-full h-90 gap-2">
-                <div class="bg-[url(./src/images/disign/download.jpg)] bg-no-repeat bg-cover w-full h-[80%] rounded-3xl"></div>
-                <div class="flex flex-col justify-between w-full h-[17%] px-4 pb-2">
-                    <div class="flex w-full justify-between">
-                        <h3>Entire apartment . 2 beds</h3>
-                        <div class="flex items-center justify-between w-11">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-4 fill-[#eb5757]">
-                                <path fill-rule="evenodd" d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.006 5.404.434c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.434 2.082-5.005Z" clip-rule="evenodd" />
-                            </svg>
-                            <h3>4.4</h3>
-                        </div>
-                    </div>
-                    <h2 class="font-bold">Stylist apartment in center of the city</h2>
-                </div>
-            </div>
-            <div id="crd" class="flex flex-col justify-between w-full h-90 gap-2">
-                <div class="bg-[url(./src/images/disign/download.jpg)] bg-no-repeat bg-cover w-full h-[80%] rounded-3xl"></div>
-                <div class="flex flex-col justify-between w-full h-[17%] px-4 pb-2">
-                    <div class="flex w-full justify-between">
-                        <h3>Entire apartment . 2 beds</h3>
-                        <div class="flex items-center justify-between w-11">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-4 fill-[#eb5757]">
-                                <path fill-rule="evenodd" d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.006 5.404.434c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.434 2.082-5.005Z" clip-rule="evenodd" />
-                            </svg>
-                            <h3>4.4</h3>
-                        </div>
-                    </div>
-                    <h2 class="font-bold">Stylist apartment in center of the city</h2>
-                </div>
+            </form>
             </div>
         </div>
     </div>
+    
 </body>
 </html>
+
