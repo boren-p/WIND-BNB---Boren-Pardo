@@ -26,6 +26,7 @@ let adultN=document.getElementById("adultsNumber");
 let childN=document.getElementById("childrenNumber");
 let reset=document.getElementById("reset")
 let notFound=document.getElementById("notFound");
+let reloadBtn = document.getElementById("reload");
 let adultN2=0;
 let childN2=0;
 let ide=0;
@@ -122,6 +123,10 @@ reset.addEventListener("mouseleave", () => {
   reset.textContent = "Edit your search";
 });
 
+
+reloadBtn.addEventListener("click", () => {
+    location.reload();
+  });
 
 //este escuchador de eventos registra los datos de las ciudades en el input Location, me tocó sacarlo del switch case porque se estaba volviendo loco.
 locationDiv.addEventListener("click", e=>{
