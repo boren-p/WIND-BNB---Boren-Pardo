@@ -30,11 +30,9 @@
         </div>
 
     <!--CONTENIDO DE CARDS-->
-        <div>
-            <div id="notFound" class="hidden flex flex-col w-full h-150 items-center justify-center">
-                <img src="./src/images/icons/NOT FOUND 2.png" alt="Not Found">
-                <h1 class="font-extrabold text-4xl">Not found</h1>
-            </div>
+        <div id="notFound" class="hidden flex-col w-full h-150 items-center justify-center">
+            <img src="./src/images/icons/NOT FOUND 2.png" alt="Not Found">
+            <h1 class="font-extrabold text-4xl">Not found</h1>
         </div>
         <div id="maya" class="grid grid-cols-1 gap-5 h-full w-full md:grid-cols-2 lg:grid-cols-3">
         <!--CARD DE PRUEBA, PARA PROBAR NUEVOS CAMBIOS Y CORRECIONES-->
@@ -73,14 +71,14 @@
             <!--INPUTS-->
                 <div class="flex flex-col w-full h-40 rounded-2xl shadow-md border-2 border-gray-100 md:w-[90%] md:h-20 md:flex-row">
                     <div id="location" tabindex="0" class="flex relative flex-col justify-center h-20 w-full rounded-t-2xl border-b-2 border-gray-100 py-2 px-5 md:w-[33%] md:border-b-0 md:rounded-b-2xl md:focus:border-2 md:border-black">
-                        <label for="Location" class="font-bold text-[14px] text-gray-500">LOCATION</label>
+                        <label class="font-bold text-[14px] text-gray-500">LOCATION</label>
                         <input id="locationIn" type="text" placeholder="Add location" class="text-[20px] appearance-none outline-none border-none bg-transparent">
-                        <div id="locationOptions" class="hidden absolute top-full left-0 w-full rounded-b-2xl md:rounded-t-2xl bg-white overflow-hidden shadow-2xl">
+                        <div id="locationOptions" class="hidden flex-col absolute top-full left-0 w-full rounded-b-2xl md:rounded-t-2xl bg-white overflow-hidden shadow-2xl">
                             <div class="w-full h-10 text-center bg-white">${element.city}</div>  
                         </div> 
                     </div>
                     <div id="guests" tabindex="0" class="flex flex-col justify-center h-20 w-full rounded-b-2xl py-2 px-5 md:w-[33%] md:rounded-t-2xl md:focus:border-2">
-                        <label for="Guests" class="font-bold text-[14px] text-gray-500">GUESTS</label>
+                        <label class="font-bold text-[14px] text-gray-500">GUESTS</label>
                         <input id="guestsIn" type="number" placeholder="Add guests number" class="text-[20px] appearance-none outline-none border-none bg-transparent">
                     </div>
                     <div class="hidden md:flex w-[33%] h-full items-center justify-center">
